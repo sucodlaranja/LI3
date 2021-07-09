@@ -1,0 +1,51 @@
+API da estrutura SGR
+
+
+load_sgr()
+
+    load_business_file (id;name;city;state;categories,,,\n)
+        Criar HashTable  (id, (name, city, state))
+            requer estrutura para armazenar (name, city, state)
+        Criar BalancedBT (A-Z, list of business names)
+            inicializar árvore com nodos de A-Z com listas vazias
+        Criar BalancedBT (city names, !sorted! BalancedBT of business id's)
+            se a cidade não existe, criamos um novo nodo da cidade
+            de resto é só adicionar o business id à BalancedBT de cada cidade
+                esta adição é, de preferência e se possível, ordenada
+        Criar BalancedBT (categories, !sorted! BalancedBT of business id's)
+            se a categoria não existe, criamos um novo nodo da categoria
+            de resto é só adicionar o business id à BalancedBT de cada categoria
+                esta adição é, de preferência e se possível, ordenada
+
+    load_users_file (id;name;friends,,,\n)
+        Criar HashTable (id, name)
+
+    load_reviews_file (r_id;u_id;b_id;stars;useful;funny;cool;date;text\n)
+        lista de reviews por utilizador
+        rating de cada business
+        dicionário
+
+
+Novas possíveis assinaturas para funções de leitura de ficheiros a colocar num ficheiro próprio
+
+    int load_business_file (
+                            char *filepath ou FILE *filepointer
+                            GHashTable *business_table
+                            GTree *business_names
+                            GTree *cities
+                            GTree *categories
+                           )
+
+    int load_users_file    (
+                            char *filepath ou FILE *filepointer
+                            GHashTable *users_table
+                           )
+
+
+    int load_reviews_file  (
+                            char *filepath ou FILE *filepointer
+                            GHashTable *users_table
+                           )
+
+
+FAZER TYPEDEF PARA ERROS!!!!

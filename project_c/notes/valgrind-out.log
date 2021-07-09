@@ -1,0 +1,115 @@
+==26249== Memcheck, a memory error detector
+==26249== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==26249== Using Valgrind-3.16.1 and LibVEX; rerun with -h for copyright info
+==26249== Command: ./queries
+==26249== Parent PID: 2893
+==26249== 
+==26249== 
+==26249== HEAP SUMMARY:
+==26249==     in use at exit: 18,804 bytes in 9 blocks
+==26249==   total heap usage: 12,306,808 allocs, 12,306,799 frees, 401,243,727 bytes allocated
+==26249== 
+==26249== 4 bytes in 1 blocks are still reachable in loss record 1 of 9
+==26249==    at 0x483E77F: malloc (vg_replace_malloc.c:307)
+==26249==    by 0x491D0D4: ??? (in /usr/lib/libglib-2.0.so.0.6800.1)
+==26249==    by 0x491D169: g_private_get (in /usr/lib/libglib-2.0.so.0.6800.1)
+==26249==    by 0x48EF6FD: g_slice_alloc (in /usr/lib/libglib-2.0.so.0.6800.1)
+==26249==    by 0x48BD97E: g_hash_table_new_full (in /usr/lib/libglib-2.0.so.0.6800.1)
+==26249==    by 0x48D897B: ??? (in /usr/lib/libglib-2.0.so.0.6800.1)
+==26249==    by 0x48990D4: ??? (in /usr/lib/libglib-2.0.so.0.6800.1)
+==26249==    by 0x400FE8D: call_init.part.0 (in /usr/lib/ld-2.33.so)
+==26249==    by 0x400FF77: _dl_init (in /usr/lib/ld-2.33.so)
+==26249==    by 0x40010C9: ??? (in /usr/lib/ld-2.33.so)
+==26249== 
+==26249== 32 bytes in 1 blocks are still reachable in loss record 2 of 9
+==26249==    at 0x4840B65: calloc (vg_replace_malloc.c:760)
+==26249==    by 0x48D8A61: g_malloc0 (in /usr/lib/libglib-2.0.so.0.6800.1)
+==26249==    by 0x48B98F1: ??? (in /usr/lib/libglib-2.0.so.0.6800.1)
+==26249==    by 0x48BD9BE: g_hash_table_new_full (in /usr/lib/libglib-2.0.so.0.6800.1)
+==26249==    by 0x48D897B: ??? (in /usr/lib/libglib-2.0.so.0.6800.1)
+==26249==    by 0x48990D4: ??? (in /usr/lib/libglib-2.0.so.0.6800.1)
+==26249==    by 0x400FE8D: call_init.part.0 (in /usr/lib/ld-2.33.so)
+==26249==    by 0x400FF77: _dl_init (in /usr/lib/ld-2.33.so)
+==26249==    by 0x40010C9: ??? (in /usr/lib/ld-2.33.so)
+==26249== 
+==26249== 32 bytes in 1 blocks are still reachable in loss record 3 of 9
+==26249==    at 0x4840B65: calloc (vg_replace_malloc.c:760)
+==26249==    by 0x48D8A61: g_malloc0 (in /usr/lib/libglib-2.0.so.0.6800.1)
+==26249==    by 0x48B98F1: ??? (in /usr/lib/libglib-2.0.so.0.6800.1)
+==26249==    by 0x48BD9BE: g_hash_table_new_full (in /usr/lib/libglib-2.0.so.0.6800.1)
+==26249==    by 0x48990DE: ??? (in /usr/lib/libglib-2.0.so.0.6800.1)
+==26249==    by 0x400FE8D: call_init.part.0 (in /usr/lib/ld-2.33.so)
+==26249==    by 0x400FF77: _dl_init (in /usr/lib/ld-2.33.so)
+==26249==    by 0x40010C9: ??? (in /usr/lib/ld-2.33.so)
+==26249== 
+==26249== 64 bytes in 1 blocks are still reachable in loss record 4 of 9
+==26249==    at 0x483E6AF: malloc (vg_replace_malloc.c:306)
+==26249==    by 0x48D8B88: g_realloc (in /usr/lib/libglib-2.0.so.0.6800.1)
+==26249==    by 0x48B98DB: ??? (in /usr/lib/libglib-2.0.so.0.6800.1)
+==26249==    by 0x48BD9BE: g_hash_table_new_full (in /usr/lib/libglib-2.0.so.0.6800.1)
+==26249==    by 0x48D897B: ??? (in /usr/lib/libglib-2.0.so.0.6800.1)
+==26249==    by 0x48990D4: ??? (in /usr/lib/libglib-2.0.so.0.6800.1)
+==26249==    by 0x400FE8D: call_init.part.0 (in /usr/lib/ld-2.33.so)
+==26249==    by 0x400FF77: _dl_init (in /usr/lib/ld-2.33.so)
+==26249==    by 0x40010C9: ??? (in /usr/lib/ld-2.33.so)
+==26249== 
+==26249== 64 bytes in 1 blocks are still reachable in loss record 5 of 9
+==26249==    at 0x483E6AF: malloc (vg_replace_malloc.c:306)
+==26249==    by 0x48D8B88: g_realloc (in /usr/lib/libglib-2.0.so.0.6800.1)
+==26249==    by 0x48B98DB: ??? (in /usr/lib/libglib-2.0.so.0.6800.1)
+==26249==    by 0x48BD9BE: g_hash_table_new_full (in /usr/lib/libglib-2.0.so.0.6800.1)
+==26249==    by 0x48990DE: ??? (in /usr/lib/libglib-2.0.so.0.6800.1)
+==26249==    by 0x400FE8D: call_init.part.0 (in /usr/lib/ld-2.33.so)
+==26249==    by 0x400FF77: _dl_init (in /usr/lib/ld-2.33.so)
+==26249==    by 0x40010C9: ??? (in /usr/lib/ld-2.33.so)
+==26249== 
+==26249== 96 bytes in 1 blocks are still reachable in loss record 6 of 9
+==26249==    at 0x483E77F: malloc (vg_replace_malloc.c:307)
+==26249==    by 0x48D8599: g_malloc (in /usr/lib/libglib-2.0.so.0.6800.1)
+==26249==    by 0x48EF71F: g_slice_alloc (in /usr/lib/libglib-2.0.so.0.6800.1)
+==26249==    by 0x48BD97E: g_hash_table_new_full (in /usr/lib/libglib-2.0.so.0.6800.1)
+==26249==    by 0x48D897B: ??? (in /usr/lib/libglib-2.0.so.0.6800.1)
+==26249==    by 0x48990D4: ??? (in /usr/lib/libglib-2.0.so.0.6800.1)
+==26249==    by 0x400FE8D: call_init.part.0 (in /usr/lib/ld-2.33.so)
+==26249==    by 0x400FF77: _dl_init (in /usr/lib/ld-2.33.so)
+==26249==    by 0x40010C9: ??? (in /usr/lib/ld-2.33.so)
+==26249== 
+==26249== 96 bytes in 1 blocks are still reachable in loss record 7 of 9
+==26249==    at 0x483E77F: malloc (vg_replace_malloc.c:307)
+==26249==    by 0x48D8599: g_malloc (in /usr/lib/libglib-2.0.so.0.6800.1)
+==26249==    by 0x48EF71F: g_slice_alloc (in /usr/lib/libglib-2.0.so.0.6800.1)
+==26249==    by 0x48BD97E: g_hash_table_new_full (in /usr/lib/libglib-2.0.so.0.6800.1)
+==26249==    by 0x48990DE: ??? (in /usr/lib/libglib-2.0.so.0.6800.1)
+==26249==    by 0x400FE8D: call_init.part.0 (in /usr/lib/ld-2.33.so)
+==26249==    by 0x400FF77: _dl_init (in /usr/lib/ld-2.33.so)
+==26249==    by 0x40010C9: ??? (in /usr/lib/ld-2.33.so)
+==26249== 
+==26249== 2,032 bytes in 1 blocks are still reachable in loss record 8 of 9
+==26249==    at 0x4840B65: calloc (vg_replace_malloc.c:760)
+==26249==    by 0x48D8A61: g_malloc0 (in /usr/lib/libglib-2.0.so.0.6800.1)
+==26249==    by 0x48EF97A: g_slice_alloc (in /usr/lib/libglib-2.0.so.0.6800.1)
+==26249==    by 0x48BD97E: g_hash_table_new_full (in /usr/lib/libglib-2.0.so.0.6800.1)
+==26249==    by 0x48D897B: ??? (in /usr/lib/libglib-2.0.so.0.6800.1)
+==26249==    by 0x48990D4: ??? (in /usr/lib/libglib-2.0.so.0.6800.1)
+==26249==    by 0x400FE8D: call_init.part.0 (in /usr/lib/ld-2.33.so)
+==26249==    by 0x400FF77: _dl_init (in /usr/lib/ld-2.33.so)
+==26249==    by 0x40010C9: ??? (in /usr/lib/ld-2.33.so)
+==26249== 
+==26249== 16,384 bytes in 1 blocks are still reachable in loss record 9 of 9
+==26249==    at 0x483E77F: malloc (vg_replace_malloc.c:307)
+==26249==    by 0x48D8599: g_malloc (in /usr/lib/libglib-2.0.so.0.6800.1)
+==26249==    by 0x48D898D: ??? (in /usr/lib/libglib-2.0.so.0.6800.1)
+==26249==    by 0x48990D4: ??? (in /usr/lib/libglib-2.0.so.0.6800.1)
+==26249==    by 0x400FE8D: call_init.part.0 (in /usr/lib/ld-2.33.so)
+==26249==    by 0x400FF77: _dl_init (in /usr/lib/ld-2.33.so)
+==26249==    by 0x40010C9: ??? (in /usr/lib/ld-2.33.so)
+==26249== 
+==26249== LEAK SUMMARY:
+==26249==    definitely lost: 0 bytes in 0 blocks
+==26249==    indirectly lost: 0 bytes in 0 blocks
+==26249==      possibly lost: 0 bytes in 0 blocks
+==26249==    still reachable: 18,804 bytes in 9 blocks
+==26249==         suppressed: 0 bytes in 0 blocks
+==26249== 
+==26249== For lists of detected and suppressed errors, rerun with: -s
+==26249== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)

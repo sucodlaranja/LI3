@@ -1,0 +1,104 @@
+Rúben Santos - 28 de março de 2021
+
+Geral
+	Ideias gerais da implementação do projeto.
+
+Estruturas gerais
+	SGR
+		bus_database{
+			hash_table ->
+			avl_tree
+			avl_tree
+		}
+		rev_database
+		usr_database
+	
+	TABLE
+		...
+
+
+Databases
+	Nota: a procura não é case sensitive( 'a' == 'A', 'b' == 'B', ...)
+	
+	bus_database - ('state': where do we put it?)
+
+		.hash_table where 
+			key   = bus_id
+			value = struct{
+						char* name
+						float stars
+						int   n_reviews
+					}
+
+		.avl_tree where
+			node_value = bus_name, bus_id (tree sorted by bus_names)
+
+		.avl_tree where
+			node_value = city, "list" of bus_id (tree sorted by city names)
+
+		.avl_tree where
+			node_value = category, "list" of bus_id (tree sorted by category)
+		
+
+		!!! IMPORTANTE !!!
+			A "lista" de bus_id funciona da seguinte forma:
+				.By default, a lista não é ordenada
+				.Se os businesses já tiverem associado um rating
+					-> ordenamos os k primeiros (k <= 10?)
+				.A própria "lista" guarda o nº de elementos ordenados
+
+
+
+	usr_database (friends? what???)
+
+		.hash_table where
+			key   = usr_id
+			value = struct{
+						char* name (?precisamos do nome de utilizador?)
+						lista de reviews que o utilizador já fez
+					}
+
+
+
+	rev_database
+		.guarda alguma coisa?
+
+		Uma coisa é clara: se tivermos de iterar pela review.csv fazemos:
+			-> calculamos rating e nº reviews de todos os negócios
+			-> atribuimos a todos os users os id's das suas reviews
+
+		useful, funny, cool, date -> o que fazer com isto? ignorar?
+
+		text -> Não acho que guardar isto em memória seja uma escolha sensata.
+
+			Uma ideia para fazer a query 9 é criar um dicionário de palavras.
+			Como é obvio, o dicionário está ordenado (não é case sensitive).	
+			Criar/Editar um ficheiro dicionario.csv com o formato:
+				word; review_id_1, review_id_2, ...;
+
+
+
+Query's
+	
+	1. load_sgr -> carrega as bases de dados todas (incluindo o dicionário?)
+
+	A partir daqui, se tivermos inicialmente carregado as bases de dados, só temos de extrair informação.
+	Vamos assumir então que não temos as bases de dados carregadas ainda mas mesmo assim vamos chamar as query's.
+
+	2. bus_started_by_letter -> lista e nº de negócios que começam com a letra c.
+
+		- é preciso percorrer o ficheiro business.csv, logo
+			- temos de criar a hash_table e inserir os business lá
+				
+			Agora temos duas opções:
+				a) criamos já a lista de todos os nomes ordenados
+					+ da proxima vez que chamarmos a query 1 é só iterar pela lista ordenada e sacar os bus_id's (gg ez)
+					- demora mais tempo a primeira vez que executamos a query_1
+
+				b) adicionamos à lista apenas os nomes que começam pela letra c
+					+ demora menos tempo do que a opção a)
+					- sempre que chamarmos a query 1 temos de formar a lista de nomes que começam pela letra pedida
+
+			Escolha: ???? maybe a) ????
+
+
